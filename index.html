@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trees</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      overflow: hidden;
+      font-family: monospace;
+      color: #ccc;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #ui {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: rgba(0,0,0,0.55);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      user-select: none;
+    }
+
+    #ui label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #ui input[type=range] {
+      width: 120px;
+      accent-color: #7f7;
+    }
+
+    #resetBtn {
+      margin-top: 4px;
+      padding: 4px 10px;
+      background: #222;
+      border: 1px solid #555;
+      color: #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: monospace;
+    }
+
+    #resetBtn:hover { background: #333; }
+
+    #stats {
+      font-size: 11px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="ui">
+    <label>branch <input type="range" id="branchChance" min="0" max="1" step="0.01" value="0.18" /></label>
+    <label>stop   <input type="range" id="stopChance"   min="0" max="1" step="0.01" value="0.12" /></label>
+    <label>wind   <input type="range" id="wind"         min="-1" max="1" step="0.01" value="0"   /></label>
+    <button id="resetBtn">reset</button>
+    <span id="stats"></span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
